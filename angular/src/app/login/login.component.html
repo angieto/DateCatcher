@@ -1,0 +1,33 @@
+<!-- Login Form -->
+<div class="wrapper" [style.background-image]="'url(' + 'https://hdqwalls.com/download/coffee-cup-drink-notebook-table-dp-1920x1080.jpg' + ')'">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-left">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['register']"><strong>DateCatcher</strong></a>
+            </li>
+        </ul>
+    </nav>
+    <div class="login-box text-center">    
+        <h1 class="text-white">Login</h1>
+        <small *ngIf="error" class="alert alert-danger">{{ error }}</small>
+        <div class="textbox">
+            <form (submit)="Login()">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Email" 
+                        name="email" #email="ngModel" [(ngModel)]="loginUser.email" required>
+                    <small class="text-white" *ngIf="email.touched && email.invalid">Email is missing</small>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" placeholder="Password" 
+                        name="password" [(ngModel)]="loginUser.password" required>
+                </div>
+                <button type="submit" class="btn btn-light">Sign in</button>
+            </form>
+        </div>
+        <div class="container mt-3">
+            <a class="text-white" [routerLink]="['/register']"><strong>Click here to sign up for an account</strong></a>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,21 @@
+.height {
+    height: 70vh;
+}
+
+.border {
+    display: block;
+    margin: auto;
+    width: 160px;
+    height: 3px;
+    background: navy;
+    margin-bottom: 40px;
+}
+
+.name {
+    color: salmon;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+

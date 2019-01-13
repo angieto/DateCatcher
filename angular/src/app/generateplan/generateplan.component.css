@@ -1,0 +1,18 @@
+.wrapper, form {
+    height: auto;
+    display: grid;
+    background: none;
+}
+
+.form {
+    margin: auto;
+    margin-top: 60px;
+}
+
+button {
+    margin: auto;
+}
+
+label, button {
+    font-weight: 900 !important;
+}

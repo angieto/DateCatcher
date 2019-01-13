@@ -1,0 +1,112 @@
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end">
+  <ul class="navbar-nav col-8 mx-3 text-left">
+      <li class="nav-item active"><img src="https://image.ibb.co/noKVrp/datecatcherfinal2.png" style="width:55px;" alt=""></li>
+      <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['register']"><strong>DateCatcher</strong></a>
+      </li>
+  </ul>
+  <ul class="navbar-nav col-3">
+      <li><a class="nav-link">Welcome back</a></li>
+      <li ngbDropdown class="d-inline-block">
+          <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown">
+              {{ _currentUser.firstname }}
+          </a>
+          <div ngbDropdownMenu aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/dashboard',_currentUser._id]">Dashboard</a>
+            <a class="dropdown-item" [routerLink]="['/dashboard',_currentUser._id,'profile']">Profile</a>
+            <a class="dropdown-item" [routerLink]="['/dashboard',_currentUser._id,'calendar']">My Calendar</a>
+            <a class="dropdown-item" [routerLink]="['/dashboard',_currentUser._id,'randomize']">Date Maker</a>
+            <a class="dropdown-item" [routerLink]="['detail']">Invitations</a>
+            <a class="dropdown-item" [routerLink]="['notifications']">Notifications</a>
+            <a class="dropdown-item" href="#">Log out</a>
+          </div>
+      </li>
+  </ul>
+</nav>
+<div class="row text-center ">
+
+<div class="col-md-4">
+  <div class="btn-group">
+    <div
+      class="btn btn-primary"
+      mwlCalendarPreviousView
+      [view]="view"
+      [(viewDate)]="viewDate"
+      (viewDateChange)="activeDayIsOpen = false">
+      Previous
+    </div>
+    <div
+      class="btn btn-outline-secondary"
+      mwlCalendarToday
+      [(viewDate)]="viewDate">
+      Today
+    </div>
+    <div
+      class="btn btn-primary"
+      mwlCalendarNextView
+      [view]="view"
+      [(viewDate)]="viewDate"
+      (viewDateChange)="activeDayIsOpen = false">
+      Next
+    </div>
+  </div>
+</div>
+<div class="col-md-4">
+  <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+</div>
+<div class="col-md-4">
+  <div class="btn-group">
+    <div
+      class="btn btn-primary"
+      (click)="view = CalendarView.Month"
+      [class.active]="view === CalendarView.Month">
+      Month
+    </div>
+    <div
+      class="btn btn-primary"
+      (click)="view = CalendarView.Week"
+      [class.active]="view === CalendarView.Week">
+      Week
+    </div>
+    <div
+      class="btn btn-primary"
+      (click)="view = CalendarView.Day"
+      [class.active]="view === CalendarView.Day">
+      Day
+    </div>
+  </div>
+</div>
+</div>
+<br>
+<div [ngSwitch]="view">
+<mwl-calendar-month-view
+  *ngSwitchCase="CalendarView.Month"
+  [viewDate]="viewDate"
+  [events]="events"
+  [refresh]="refresh"
+  [activeDayIsOpen]="activeDayIsOpen"
+  (dayClicked)="dayClicked($event.day)"
+  (eventClicked)="handleEvent('Clicked', $event.event)"
+  (eventTimesChanged)="eventTimesChanged($event)"
+  >
+</mwl-calendar-month-view>
+<mwl-calendar-week-view
+  *ngSwitchCase="CalendarView.Week"
+  [viewDate]="viewDate"
+  [events]="events"
+  [refresh]="refresh"
+  (eventClicked)="handleEvent('Clicked', $event.event)"
+  (eventTimesChanged)="eventTimesChanged($event)">
+</mwl-calendar-week-view>
+<mwl-calendar-day-view
+  *ngSwitchCase="CalendarView.Day"
+  [viewDate]="viewDate"
+  [events]="events"
+  [refresh]="refresh"
+  (eventClicked)="handleEvent('Clicked', $event.event)"
+  (eventTimesChanged)="eventTimesChanged($event)">
+</mwl-calendar-day-view>
+</div>
+
+<br><br><br>

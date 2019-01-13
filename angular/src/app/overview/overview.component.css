@@ -1,0 +1,67 @@
+.wrapper {
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/63/81/9357ac78f5a7fd1.jpg");
+    opacity: 0.9;
+}
+
+.wrapper2 {
+    height: 180vh;
+}
+
+.primary {
+    margin-top: 3%;
+    height: 50%;
+    background-color: #ffffff;
+    opacity: 0.8;
+    padding: 5%;
+    border: 2px solid lightsteelblue;
+    border-radius: 8px;
+}
+
+.secondary {
+    margin-top: 3%;
+    height: 32%;
+}
+
+#notifications {
+    height: 100%;
+    background-color: #ffffff;
+    opacity: 0.8;
+    border: 2px solid lightsteelblue;
+    border-radius: 8px;
+    padding: 5%;
+}
+
+#events {
+    height: 100%;
+    background-color: #ffffff;
+    opacity: 0.8;
+    border: 2px solid lightsteelblue;
+    border-radius: 8px;
+    padding: 5%;
+}
+
+h2 {
+    color:crimson;
+    font-weight: 800 !important;
+}
+
+.detail {
+    color: cornflowerblue;
+    font-weight: 700;
+}
+
+.accept {
+    color: seagreen;
+    font-weight: 700;
+}
+
+.decline {
+    color: darkred;
+    font-weight: 700;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 2px solid lightsteelblue;
+}

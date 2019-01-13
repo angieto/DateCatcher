@@ -1,0 +1,83 @@
+<div class="wrapper">
+    <div class="wrapper2">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end">
+        <ul class="navbar-nav col-8 mx-3 text-left">
+            <li class="nav-item active"><img src="https://image.ibb.co/noKVrp/datecatcherfinal2.png" style="width:55px;" alt=""></li>
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['register']"><strong>DateCatcher</strong></a>
+            </li>
+        </ul>
+        <ul class="navbar-nav col-3">
+            <li><a class="nav-link">Welcome back</a></li>
+            <li ngbDropdown class="d-inline-block">
+                <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown">
+                    {{ _currentUser.firstname }}
+                </a>
+                <div ngbDropdownMenu aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" [routerLink]="['profile']">Profile</a>
+                    <a class="dropdown-item" [routerLink]="['calendar']">My Calendar</a>
+                    <a class="dropdown-item" [routerLink]="['randomize']">Date Maker</a>
+                    <a class="dropdown-item" [routerLink]="['detail']">Invitations</a>
+                    <a class="dropdown-item" [routerLink]="['notifications']">Notifications</a>
+                    <a class="dropdown-item" href="#">Log out</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="container mx-auto text-center primary col-10">
+        <h2>Invitations</h2>
+        <hr>
+        <!-- We need a for loop to render invitations here -->
+        <div class="row mx-auto">
+            <!-- Run for loop, if clicked, show the detail content of the plan -->
+            <!-- We need a showdetail() function -->
+            <div *ngFor="let invitation of invitations" (click)=showdetail()></div>
+            <!-- End my theory here -->
+            <div class="card mx-3" style="width:280px">
+                <div class="card-body">
+                    <h4 class="card-title">#1</h4>
+                    <p class="card-text">Sender: Meow</p>
+                    <!-- Button to Open the Modal -->
+                    <ng-template #content let-modal>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Meow</h4>
+                            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Date: Saturday, 9/29/18</p>
+                            <p>Time: 3:00 PM</p>
+                            <p>Location: Bellevue Library, Downtown Bellevue</p>
+                            <p>Activity: Play hide and seek</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+                        </div>
+                    </ng-template>
+                    
+                    <button class="btn btn-link detail" (click)="openVerticallyCentered(content)">Detail</button>
+                    <a href="#" class="btn btn-link accept">Accept</a>
+                    <a href="#" class="btn btn-link decline">Decline</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="container mx-auto row secondary">
+        <div id="notifications" class="container mx-auto text-center col-5">
+            <h2>Upcoming Dates</h2>
+            <hr>
+            <button class="btn btn-light" [routerLink]="['/plans']">Details</button>
+        </div>
+        <div id="events" class="container mx-auto text-center col-5">
+            <h2>Notifications</h2>
+            <hr>
+            <div class="container mx-auto">
+                <p>MatchaPrince said yes! Your date is marked on the calendar</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

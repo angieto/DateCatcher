@@ -1,0 +1,28 @@
+.wrapper {
+    opacity: 0.9;
+}
+
+.signup-box {
+    width: 350px;
+    height: 100%;
+    position: absolute;
+    margin-top: 8%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.signup-box h1 {
+    font-size: 40px;
+    padding: 13px 0
+}
+
+.textbox {
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    padding-bottom: 45px;
+    margin: 8px 0;
+    border-bottom: 2px solid white;
+}

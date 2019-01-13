@@ -1,0 +1,37 @@
+.wrapper {
+    width: 100%;
+    opacity: 0.9;
+    background: none;
+    height: auto;
+}
+
+.box {
+    width: 75%;
+    height: 80%;
+    position: absolute;
+    margin-top: 20px;;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box h1 {
+    font-size: 40px;
+    padding: 13px 0
+}
+
+.textbox {
+    overflow: hidden;
+    padding: 60px 0;
+    padding-bottom: 45px;
+    margin: 8px 0;
+}
+
+.image {
+    background-image: url("http://www.uchong315.com/Public/Uploads/pet_baike/2017-10-20/1508481625_556234295.png");
+    background-size: cover;
+    height: 55vh;
+    border-radius: 12px;
+    border: 2px solid grey;
+}
+

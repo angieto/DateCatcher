@@ -1,0 +1,60 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end">
+    <ul class="navbar-nav col-8 mx-3 text-left">
+        <li class="nav-item active"><img src="https://image.ibb.co/noKVrp/datecatcherfinal2.png" style="width:55px;" alt=""></li>
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['register']"><strong>DateCatcher</strong></a>
+        </li>
+    </ul>
+    <ul class="navbar-nav col-3">
+        <li><a class="nav-link">Welcome back</a></li>
+        <li ngbDropdown class="d-inline-block">
+            <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown">
+                {{ _currentUser.firstname }}
+            </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" [routerLink]="['/dashboard',_currentUser._id]">Dashboard</a>
+                <a class="dropdown-item" [routerLink]="['/dashboard',_currentUser._id,'profile']">Profile</a>
+                <a class="dropdown-item" [routerLink]="['/dashboard',_currentUser._id,'calendar']">My Calendar</a>
+                <a class="dropdown-item" [routerLink]="['/dashboard',_currentUser._id,'randomize']">Date Maker</a>
+                <a class="dropdown-item" [routerLink]="['detail']">Invitations</a>
+                <a class="dropdown-item" [routerLink]="['detail']">Notifications</a>
+                <a class="dropdown-item" href="#">Log out</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+<div class="wrapper">
+    <form (submit)=createDate() class="form col-6">
+        <div class="form-group">
+            <label>Select a time to meet up:</label>
+            <input type="datetime-local" class="form-control" name="datetime" [(ngModel)]="_dateForm.datetime">
+        </div> 
+        <div class="form-group">
+            <label>Dress code:</label>
+            <select class="form-control" name="dressCode" [(ngModel)]="_dateForm.dressCode">
+                <option value="fancy">Fancy</option>
+                <option value="casual">Casual</option>
+                <option value="black">Black</option>
+                <option value="white">White</option>
+                <option value="face_mask">Face mask</option>
+                <option value="suprise_me">Surprises me!</option>
+            </select> 
+        </div>
+        <div class="form-group">
+            <label>Activity:</label>
+            <input type="text" class="form-control" readonly [(ngModel)]="_dateForm.activity" name="activity">
+        </div>
+        <div class="form-group">
+            <label>Location:</label>
+            <input type="text" class="form-control" readonly [(ngModel)]="_dateForm.location" name="location">
+        </div>
+        <!-- Button to generate a plan -->
+        <div class="row">
+            <button type="button" class="btn btn-success" (click)="getRandomActivity()" name="activityRandomizer">Randomize Activity</button>
+            <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+    </form>
+    <!-- If there's error, display -->
+
+</div>

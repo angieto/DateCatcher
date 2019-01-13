@@ -1,0 +1,50 @@
+.wrapper {
+    width: 100%;
+    background-size: cover;
+}
+
+.team-section {
+    text-align: center;
+    background: lightslategray;
+    padding: 60px;
+}
+
+.team-section h1 {
+    color: lightblue;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+.border {
+    display: block;
+    margin: auto;
+    width: 160px;
+    height: 3px;
+    background: seagreen;
+    margin-bottom: 35px;
+}
+
+.ps {
+    margin-bottom: 40px;
+}
+
+.ps a {
+    display: inline-block;
+    margin: 0 30px;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.ps a img {
+    width: 100%;
+    filter: grayscale(50%);
+    transition: 0.4s all;
+}
+
+.ps a:hover > img {
+    filter: none;
+}
+

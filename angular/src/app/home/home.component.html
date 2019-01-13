@@ -1,0 +1,43 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end">
+    <ul class="navbar-nav col-8 mx-3 text-left">
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['register']"><strong>DateCatcher</strong></a>
+        </li>
+    </ul>
+    <ul class="navbar-nav col-3">
+        <li class="nav-item mx-3">
+            <a class="nav-link" [routerLink]="['/login']">Login</a>
+        </li>
+        <li class="nav-item mx-3">
+            <a class="nav-link" [routerLink]="['/about']">About us</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Carousel -->
+<ngb-carousel>
+    <ng-template ngbSlide>
+        <img src="https://cdn.narcity.com/uploads/231208_696b8fb47bfaede0731ed1c590aa220ad6f9ffd3.png_facebook.png" alt="coffee date">
+        <div class="carousel-caption">
+            <h2>DATECATCHER</h2>
+            <br>
+            <a class="text-white" [routerLink]="['register']">GET STARTED</a>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <img src="http://postgradcasanova.com/wp-content/uploads/2016/09/5-easy-and-cheap-first-date-ideas-1-1080x675.jpeg" alt="icecream date">
+        <div class="carousel-caption">
+            <h2>Roll the dice, find a date</h2>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <img src="https://www.203challenges.com/wp-content/uploads/2018/03/yoann-boyer-349117-unsplash.jpg" alt="picnic date">
+        <div class="carousel-caption">
+            <h2>Randomize your adventure</h2>
+        </div>
+    </ng-template>
+</ngb-carousel>
+        
+
+   
